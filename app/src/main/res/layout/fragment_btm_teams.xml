@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarTeam"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:titleTextColor="@android:color/white"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/NoActionBar"/>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cv"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="4dp">
+
+                <Spinner
+                        android:id="@+id/spinnerTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:paddingEnd="6dp"
+                        android:paddingStart="8dp" />
+            </android.support.v7.widget.CardView>
+
+
+            <ProgressBar
+                    android:id="@+id/progress_bar_team"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipeRefreshTeam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cv"
+                    android:layout_marginTop="8dp">
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_team"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
